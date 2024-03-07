@@ -17,7 +17,7 @@ export const NewAdminPage = () => {
                isError: isRegisterError,
                error: registerError,
                data: register,
-               isLoading: isRegisterLoading,
+               // isLoading: isRegisterLoading,
                isSuccess: isRegisterSuccess,
           },
      ] = useRegisterNewAdminMutation();

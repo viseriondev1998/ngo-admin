@@ -19,7 +19,7 @@ export const GalleryDetailsPage = () => {
           data: gallery,
           isError: isGalleryError,
           error: galleryError,
-          isLoading: isGalleryLoading,
+          // isLoading: isGalleryLoading,
           isSuccess: isGallerySuccess,
      } = useGetGalleryByIdQuery(galleryId as string);
      const [
@@ -29,7 +29,7 @@ export const GalleryDetailsPage = () => {
                error: galleryDeleteError,
                data: deleteGalleryData,
                isSuccess: isDeleteSuccess,
-               isLoading: isDeleteGalleryLoading,
+               // isLoading: isDeleteGalleryLoading,
           },
      ] = useDeleteGalleryByIdMutation();
      const navigate = useNavigate();
