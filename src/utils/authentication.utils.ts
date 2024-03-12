@@ -13,7 +13,7 @@ export const RemoveAuthToken = () => {
 };
 
 export const AppBaseQuery = fetchBaseQuery({
-     baseUrl: "http://localhost:8080/api/1.0",
+     baseUrl: "https://ngo-backend-3e3w.onrender.com/api/1.0",
      prepareHeaders(headers, api) {
           headers.set("Authorization", GetAuthToken()?.toString() as string);
      },
