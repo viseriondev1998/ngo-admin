@@ -28,7 +28,7 @@ export const NewGalleryPage = () => {
                isError: isGalleryError,
                error: galleryError,
                data: galleryData,
-               isLoading: isGalleryLoading,
+               // isLoading: isGalleryLoading,
                isSuccess: isGallerySuccess,
           },
      ] = useUploadNewGalleryMutation();
