@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Layout } from "../../layout";
 import { useLazyGetAllDonationsQuery } from "../../redux/api";
-import { Tooltip } from "../../component";
+import { Button, Tooltip } from "../../component";
 import { useAppDispatch } from "../../redux";
 import { handleError, setDonations, useDonationSlice } from "../../redux/app";
 import { IDonationProps } from "../../interface";
@@ -67,7 +67,10 @@ export const DonationPage = () => {
                          <h6 className="text-2xl font-semibold">Manage donations</h6>
                          <p className="text-gray-500">You can manage categories for your events and programs</p>
                     </div>
-                    <div>
+                    <div className="flex gap-5 items-center">
+                         <Button filled onClick={() => navigate("/donations/manual")}>
+                              Manual
+                         </Button>
                          <button type="button" onClick={() => ExportToExcel(donationData?.data as IDonationProps[])}>
                               <FaRegFileExcel size={30} className="fill-primary-500" />
                          </button>
@@ -91,7 +94,6 @@ export const DonationPage = () => {
                          },
                          {
                               id: "custName",
-                              width: "250px",
                               name: "Donator Name",
                               cell: ({ custName, _id }) => (
                                    <button type="button" onClick={() => navigate(`/donations/details/${_id}`)}>
@@ -127,19 +129,22 @@ export const DonationPage = () => {
 
                          {
                               id: "amount",
-                              width: "200px",
                               name: "Phone Pe Ref ID",
                               cell: ({ referenceId }) => <p className="text-gray-500">{referenceId}</p>,
                          },
                          {
                               id: "amount",
                               name: "Donated",
-                              cell: ({ amount }) => <p className="text-gray-500">INR {amount} /-</p>,
+                              cell: ({ amount, paymentToken }) => (
+                                   <div>
+                                        <p>{paymentToken}</p>
+                                        <p className="text-gray-500">INR {amount} /-</p>
+                                   </div>
+                              ),
                          },
                          {
                               id: "actions",
                               name: "Status",
-                              width: "120px",
                               cell: ({ status, createdAt }) => (
                                    <div className="flex items-center py-4 gap-3 flex-col">
                                         {moment(createdAt).format("Do MMM YYYY")}
@@ -147,6 +152,9 @@ export const DonationPage = () => {
                                              <p className="bg-yellow-100 text-yellow-500 p-2 rounded-lg">Initiated</p>
                                         )}
                                         {status === "SUCCESS" && (
+                                             <p className="bg-green-100 text-green-500 p-2 rounded-lg">Successful</p>
+                                        )}
+                                        {status === "COMPLETED" && (
                                              <p className="bg-green-100 text-green-500 p-2 rounded-lg">Successful</p>
                                         )}
                                    </div>

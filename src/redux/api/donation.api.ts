@@ -21,9 +21,25 @@ const DonationApi = createApi({
                     };
                },
           }),
+          ManualEntryForDonation: mutation<{ data: string }, IDonationProps>({
+               query: (payload) => {
+                    return {
+                         url: "/donation/manual",
+                         method: "POST",
+                         body: { ...payload },
+                    };
+               },
+          }),
      }),
 });
 
 export const DonationApiReducer = DonationApi.reducer;
 export const DonationApiMiddleware = DonationApi.middleware;
-export const { useLazyGetAllDonationsQuery, useLazyGetDonationByIdQuery, useSendingMailMutation } = DonationApi;
+export const {
+     useLazyGetAllDonationsQuery,
+     useLazyGetDonationByIdQuery,
+     useSendingMailMutation,
+     useGetAllDonationsQuery,
+     useGetDonationByIdQuery,
+     useManualEntryForDonationMutation,
+} = DonationApi;

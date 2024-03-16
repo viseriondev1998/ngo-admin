@@ -11,7 +11,14 @@ export interface IDonationProps {
      updatedAt?: string;
 }
 
-export type DonationStatus = "SUCCESS" | "REFUNDED" | "FAILED" | "CANCELLED" | "NOT_PERFORMED" | "INITIATED";
+export type DonationStatus =
+     | "SUCCESS"
+     | "REFUNDED"
+     | "FAILED"
+     | "CANCELLED"
+     | "NOT_PERFORMED"
+     | "INITIATED"
+     | "COMPLETED";
 
 export interface SendMailProps {
      donatorMailId: string;

@@ -9,3 +9,4 @@ export * from "./donation";
 export * from "./gallery";
 export * from "./details";
 export * from "./website";
+export * from "./manual-donation";

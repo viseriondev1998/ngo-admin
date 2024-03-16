@@ -20,6 +20,7 @@ import {
      SendMailToDonationPage,
      NewAdminPage,
      AdminDetails,
+     ManualDonationPage,
 } from "./pages";
 import { ProtectRoute } from "./component";
 function App() {
@@ -48,6 +49,7 @@ function App() {
 
                               <Route path="/donations" Component={() => <DonationPage />} />
                               <Route path="/donations/details/:donationId" Component={() => <DonationUserDetails />} />
+                              <Route path="/donations/manual" Component={() => <ManualDonationPage />} />
                               <Route
                                    path="/website/send-mail/:donationId"
                                    Component={() => <SendMailToDonationPage />}

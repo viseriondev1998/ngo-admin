@@ -91,6 +91,7 @@ export const DashboardPage = () => {
                          <div className="absolute right-0 z-50">
                               {showCalender ? (
                                    <Calendar
+                                        selectRange
                                         onChange={(e) => {
                                              onChange(e);
                                              setShowCalender(false);
