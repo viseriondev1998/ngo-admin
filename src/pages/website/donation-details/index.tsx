@@ -48,11 +48,13 @@ export const DonationUserDetails = () => {
                          <div className="w-full flex items-center justify-between">
                               <div>
                                    <h6 className="text-2xl font-semibold uppercase text-primary-500">
-                                        om shanti welfare trust
+                                        Infinity demo ngo
                                    </h6>
                               </div>
                               <img
-                                   src={require("../../../assets/logo.jpeg")}
+                                   src={
+                                        "https://infinitytechsolution.in/static/media/infinity%20logo%202.4cb8cc090e5c20d6af4c.png"
+                                   }
                                    className="rounded-full w-[150px]"
                                    alt=""
                               />
@@ -89,7 +91,7 @@ export const DonationUserDetails = () => {
                               <button type="button" className="p-3 bg-yellow-100 text-yellow-500">
                                    {donationData?.data.status}
                               </button>
-                              <p>Payment mode : UPI</p>
+                              <p>Payment mode : {donationData?.data.paymentToken}</p>
                          </div>
                     </div>
                )}

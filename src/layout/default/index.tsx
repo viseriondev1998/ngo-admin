@@ -43,7 +43,12 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
                     <nav className="w-[260px] p-3 flex flex-col items-center gap-5 justify-between">
                          <div className="flex flex-col gap-3 w-full">
                               <div className="h-full w-[30%] object-fill">
-                                   <img src={require("../../assets/logo.jpeg")} alt="om_shanti" />
+                                   <img
+                                        src={
+                                             "https://infinitytechsolution.in/static/media/infinity%20logo%202.4cb8cc090e5c20d6af4c.png"
+                                        }
+                                        alt="om_shanti"
+                                   />
                               </div>
                               <AppLink Icon={MdAutoGraph} label="dashboard" path="/dashboard" />
                               <AppLink Icon={MdOutlineCategory} label="categories" path="/category" />
